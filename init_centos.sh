@@ -88,7 +88,7 @@ install_cp()
 	#设置vnstat 开机启动
 	chkconfig vnstat on
 	#初始化vnstat数据库
-	vnstat -d
+	vnstatd -d
 }
 
 close_selinux()
