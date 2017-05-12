@@ -41,7 +41,7 @@ echo -e "${plain} "
 echo -e "${plain}============================================================"
 echo -e "${yellow}开始安装支持程序"
 echo -e "${plain}============================================================"
-yum install -y gcc-c++ epel-release zip unzip screen
+yum install -y gcc-c++ epel-release zip unzip screen zlib zlib-devel
 
 #安装ffmpeg
 echo -e "${plain} "
