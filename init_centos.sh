@@ -82,7 +82,7 @@ get_os_info(){
 install_cp()
 {
 	#安装常规程序
-	yum install mlocate vim yum-utils net-tools bind-utils iptables iptables-services wget mtr gcc-c++ screen git epel-release -y
+	yum install mlocate vim yum-utils net-tools bind-utils iptables iptables-services unzip wget mtr gcc-c++ screen git epel-release -y
 	yum install vnstat -y
 	yum update -y
 	#设置vnstat 开机启动
