@@ -125,7 +125,7 @@ install_gnome()
 		systemctl start vncserver@:1.service
 	else
 		echo 'echo "nameserver 8.8.8.8" >> /etc/resolv.conf; ' >> /etc/rc.local
-		echo 'VNCSERVERS="5901:root"' >> /etc/sysconfig/vncservers 
+		echo 'VNCSERVERS="1:root"' >> /etc/sysconfig/vncservers 
 		echo 'VNCSERVERARGS[1]="-geometry 1024x768"' >> /etc/sysconfig/vncservers
 		echo "启动VNC进程"
 		chkconfig vncserver on  --level 345
