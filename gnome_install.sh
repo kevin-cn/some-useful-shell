@@ -1,6 +1,6 @@
 #!/bin/bash
 # init_centos shell  
-#安装说明参见 https://sadsu.com/?p=
+#安装说明参见 https://sadsu.com/?p=266
 #----------------------------------------------------------#
 #                  Variables&Functions                     #
 #----------------------------------------------------------#
@@ -199,7 +199,7 @@ echo
 echo "###############################################################"
 echo "# Centos Gnome Auto Install                                   #"
 echo "# System Supported: CentOS 5 6 7                              #"
-echo "# Intro: https://sadsu.com/?p=                                #"
+echo "# Intro: https://sadsu.com/?p=266                                #"
 echo "# Author: kevin <yanglc@sadsu.com>                            #"
 echo "###############################################################"
 echo
