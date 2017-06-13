@@ -144,21 +144,7 @@ config_firewall() {
         else
             echo -e "${yellow}Warning:${plain} iptables looks like shutdown or not installed, please enable port 5901 manually if necessary."
         fi
-	elif [ "$release_version" -eq 5 ]; then
-	    /etc/init.d/iptables status > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-            iptables -L -n | grep -i 5901 > /dev/null 2>&1
-            if [ $? -ne 0 ]; then
-                iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 5901 -j ACCEPT
-                /etc/init.d/iptables save
-                /etc/init.d/iptables restart
-            else
-                echo -e "${green}Info:${plain} port ${green}5901${plain} already be enabled."
-            fi
-        else
-            echo -e "${yellow}Warning:${plain} iptables looks like shutdown or not installed, please enable port 5901 manually if necessary."
-        fi
-    else [ "$release_version" -eq 7 ]; then
+    elif [ "$release_version" -eq 7 ]; then
         systemctl status firewalld > /dev/null 2>&1
         if [ $? -eq 0 ]; then
             firewall-cmd --permanent --zone=public --add-port=5901/tcp
