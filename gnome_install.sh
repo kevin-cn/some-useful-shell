@@ -85,8 +85,11 @@ install_gnome()
 {
 	echo -e "${yellow}安装VNC主程序${plain}"
 	yum install tigervnc-server tigervnc epel-release -y
+	clear
 	echo -e "============================================================================="
-	echo -e "               ${yellow}请设置你的VNC登录密码/Please Set VNC Password           "            
+	echo -e "               ${yellow}请设置你的VNC登录密码/Please Set VNC Password           "
+	echo -e "               ${red}此密码不需要与你的服务器密码相同                         "
+	echo -e "               ${red}建议使用密码含大小写字母以及数字                         "
 	echo -e "${plain}==========================================================================="
 	vncpasswd 
 	echo -e "${yellow}安装桌面支持系统程序${plain}"
