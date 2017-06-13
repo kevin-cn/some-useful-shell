@@ -83,11 +83,11 @@ get_os_info(){
 
 install_gnome()
 {
-	echo "${yellow}安装VNC主程序${plain}"
+	echo -e "${yellow}安装VNC主程序${plain}"
 	yum install tigervnc-server tigervnc epel-release -y
 	echo "${yellow}设置VNC连接密码${plain}"
 	vncpasswd 
-	echo "${yellow}安装桌面支持系统程序${plain}"
+	echo -e "${yellow}安装桌面支持系统程序${plain}"
 	yum update -y
 	if [ "$release_version" -eq 7 ]; then
        yum groupinstall "X Window System" -y
@@ -97,9 +97,9 @@ install_gnome()
 	   yum install gnome-classic-session gnome-terminal nautilus-open-terminal control-center liberation-mono-fonts gedit firefox eog -y
 	fi
 	#安装Adobe Flash Player 25，某些网赚页面必须程序
-	echo "${yellow}Adobe Flash Player 25 ${plain}"
+	echo -e "${yellow}Adobe Flash Player 25 ${plain}"
 	rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
-    rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+        rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
 	if [ "$release_version" -eq 7 ]; then
 		yum install flash-plugin alsa-plugins-pulseaudio libcurl -y
 	elif [ "$release_version" -eq 6 ]; then
@@ -110,7 +110,7 @@ install_gnome()
 	fi
 	
 	#设置vnc开机启动
-	echo "${yellow}设置vnc开机启动${plain}"
+	echo -e "${yellow}设置vnc开机启动${plain}"
 	if [ "$release_version" -eq 7 ]; then
 		cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 		sed -i 's/runuser -l <USER>/runuser -l root/g' /etc/systemd/system/vncserver@:1.service
